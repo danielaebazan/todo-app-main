@@ -29,18 +29,19 @@ select {
     font: inherit;
 }
 
+/* */
+
 body {
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     font-family: 'Josefin Sans, sans-serif';
+    
 }
 
-
-
-
 .app {
+    position: relative;
     width: 100vw;
     height: 100vh;
     background-size: 100% auto;
@@ -48,27 +49,61 @@ body {
     background-repeat: no-repeat;
 }
 
+/* Theme */
+
 .light-theme {
-    background-image: url('images/bg-desktop-light.jpg');
     background-color: hsl(0, 0%, 98%)
 }
 
 .dark-theme {
-    background-image: url('images/bg-desktop-dark.jpg');
     background-color: hsl(235, 21%, 11%)
 
 }
 
+/* Mobile version (max-width: 45rem) */
+@media (max-width: 45rem) {
+    .light-theme {
+        background-image: url('images/bg-mobile-light.jpg');
+    }
+
+    .dark-theme {
+        background-image: url('images/bg-mobile-dark.jpg');
+    }
+}
+
+/* Desktop version (min-width: 45rem) */
+@media (min-width: 45rem) {
+    .light-theme {
+        background-image: url('images/bg-desktop-light.jpg');
+    }
+
+    .dark-theme {
+        background-image: url('images/bg-desktop-dark.jpg');
+    }
+}
+
 .theme-toggle {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 40px;
+    right: 40px;
     background: none;
     border: none;
     cursor: pointer;
 }
 
 .theme-toggle img {
-    width: 30px;
-    height: 30px;
+    width: auto;
+    height: auto;
+}
+
+
+/* */
+.list-header {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    width: 50%;
+    padding: 0;
+    z-index: 1;
+    color: white;
 }
