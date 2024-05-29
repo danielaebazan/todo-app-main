@@ -41,7 +41,7 @@ body {
 }
 
 .app {
-    position: relative;
+    position: static;
     width: 100vw;
     height: 100vh;
     background-size: 100% auto;
@@ -80,12 +80,27 @@ body {
     .dark-theme {
         background-image: url('images/bg-desktop-dark.jpg');
     }
+
+    .theme-toggle {
+        position: absolute;
+        right: 30vw !important;
+    }
+
+    .list-header {
+        position: absolute;
+        left: 30vw !important;
+    }
+
+    .list-item {
+        margin: auto 30vw !important;
+    }
+
 }
 
 .theme-toggle {
     position: absolute;
-    top: 40px;
-    right: 40px;
+    top: 10vh;
+    right: 8vw;
     background: none;
     border: none;
     cursor: pointer;
@@ -97,13 +112,74 @@ body {
 }
 
 
-/* */
+
+
+/* List Header */
 .list-header {
     position: absolute;
-    top: 40px;
-    left: 40px;
-    width: 50%;
+    top: 10vh;
+    left: 8vw;
+    width: 30%;
     padding: 0;
     z-index: 1;
     color: white;
+}
+
+/* List Item */
+.list-item {
+    height: 5vh;
+    margin: auto 8vw;
+    padding: 5px;
+    position: relative;
+    bottom: 65vh;
+    border-radius: 3px;
+    box-shadow: rgba(0,0,0,0.08) 0 0 0 1px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+}
+
+.button-container, .info-container {
+    display: flex;
+    align-items: center;
+}
+
+.task-title {
+    margin: 20px;
+}
+
+.delete {
+    background: none;
+    border: none;
+    padding: 0;
+    margin-right: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tick {
+    display: flex;
+    margin-left: 15px;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 0.5px solid hsl(233, 11%, 84%);
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.tick.clicked {
+    background: linear-gradient(to right,
+            hsl(192, 100%, 67%),
+            hsl(280, 87%, 65%));
+}
+
+.tick img {
+    width: 10px;
+    height: 10px;
 }
