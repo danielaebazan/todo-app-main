@@ -183,3 +183,16 @@ body {
     width: 10px;
     height: 10px;
 }
+
+
+.modal {
+        display: flex;
+        align-items: center;
+        border-radius: 3px;
+        box-shadow: rgba(0, 0, 0, 0.08) 0 0 0 1px;
+    }
+
+    .create {
+        position: relative;
+        right: 90%;
+    }
