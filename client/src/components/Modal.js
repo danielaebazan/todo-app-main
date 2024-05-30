@@ -6,10 +6,10 @@ const Modal = () => {
   }
   
   return (
-    <div>
+    <div className="new-item">
 
-    <form className="modal">
-      <input
+    <form className="info-container">
+      <input className="modal"
       required
       maxLength={30}
       placeholder=" Create a new todo..."
@@ -17,7 +17,6 @@ const Modal = () => {
       value={""}
       onChange={handleChange}
     />
-    <br/>
   
     <input className="tick create" type="submit"/>
     </form>

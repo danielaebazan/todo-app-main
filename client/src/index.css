@@ -94,6 +94,10 @@ body {
     .list-item {
         margin: auto 30vw !important;
     }
+    
+    .modal {
+        margin: auto 12.5vw !important;
+    }
 
 }
 
@@ -184,15 +188,38 @@ body {
     height: 10px;
 }
 
+.new-item {
+    height: 5vh;
+    margin-top: 5vh;
+    padding: 5px;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.08) 0 0 0 1px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+}
+
 
 .modal {
-        display: flex;
-        align-items: center;
-        border-radius: 3px;
-        box-shadow: rgba(0, 0, 0, 0.08) 0 0 0 1px;
-    }
+    height: 5vh;
+    border: none;
+    margin: auto 12.5vw;
+}
 
-    .create {
-        position: relative;
-        right: 90%;
-    }
+.create {
+    position: relative;
+    right: 90%;
+}
+
+.new {
+    height: 5vh;
+    margin: auto 8vw;
+    padding: 5px;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.08) 0 0 0 1px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+}
