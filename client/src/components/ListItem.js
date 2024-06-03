@@ -1,7 +1,21 @@
 import TickIcon from "./TickIcon"
 import deleteIcon from '../images/icon-cross.svg'
 
-const ListItem = ({task}) => {
+const ListItem = ({task, getData}) => {
+
+  const deleteItem = async () => {
+    try {
+      const response = await fetch(`${process.env.REACT_APP_SERVERURL}/todos/${task.id}`, {
+        method: 'DELETE'
+      })
+      if (response.status === 200) {
+        getData()
+      }
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
   return (
     <li className="list-item">
      
@@ -11,7 +25,7 @@ const ListItem = ({task}) => {
       </div>
 
       <div className="button-container">
-        <button className="delete">
+        <button className="delete" onClick={deleteItem}>
           <img src={deleteIcon} alt="Delete"/>
         </button>
       </div>

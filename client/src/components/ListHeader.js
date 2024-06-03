@@ -1,12 +1,12 @@
 import Modal from "./Modal";
 
-const ListHeader = ( {listName} ) => {
+const ListHeader = ( {listName, getData} ) => {
   return (
     <div className="list-header">
       <h1>{listName}</h1>
       
       <div className="info-container">
-       <Modal/>
+       <Modal mode={'create'} getData={getData}/>
       </div>
      
     </div>
