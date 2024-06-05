@@ -5,7 +5,6 @@ import Theme from './components/Theme';
 import ListItem from './components/ListItem'
 
 
-
 const App = () => {
   const [ tasks, setTasks] = useState(null)
 

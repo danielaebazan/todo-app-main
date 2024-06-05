@@ -5,7 +5,7 @@ const ListHeader = ( {listName, getData} ) => {
     <div className="list-header">
       <h1>{listName}</h1>
       
-      <div className="info-container">
+      <div className="new-todo">
        <Modal mode={'create'} getData={getData}/>
       </div>
      

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const Modal = ({ mode,getData }) => {
+const Modal = ({ mode, getData }) => {
 
   const [data, setData] = useState({
     title: "",
@@ -18,6 +18,10 @@ const Modal = ({ mode,getData }) => {
       if (response.status === 200) {
         console.log('WORKED')
         getData()
+        setData({
+          title: "",
+          date: ""
+        });
       }
     } catch(err) {
       console.error(err)
@@ -40,16 +44,16 @@ const Modal = ({ mode,getData }) => {
     <div className="new-item">
 
     <form className="info-container">
-      <input className="modal"
+      <input className="todo-input"
       required
-      maxLength={30}
+      maxLength={100}
       placeholder=" Create a new todo..."
       name="title"
       value={data.title}
       onChange={handleChange}
     />
   
-    <input className="tick create" type="submit" onClick={postData}/>
+    <input className="tick create" type="" onClick={postData}/>
     </form>
 
     </div>

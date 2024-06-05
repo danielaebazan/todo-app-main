@@ -95,8 +95,8 @@ body {
         margin: auto 30vw !important;
     }
     
-    .modal {
-        margin: auto 12.5vw !important;
+    .new-todo {
+        width: 130% !important;
     }
 
 }
@@ -131,11 +131,11 @@ body {
 
 /* List Item */
 .list-item {
-    height: 5vh;
+    height: 7vh;
     margin: auto 8vw;
     padding: 5px;
     position: relative;
-    bottom: 65vh;
+    bottom: 68vh;
     border-radius: 3px;
     box-shadow: rgba(0,0,0,0.08) 0 0 0 1px;
     display: flex;
@@ -188,8 +188,9 @@ body {
     height: 10px;
 }
 
-.new-item {
-    height: 5vh;
+.new-todo {
+    width: 271%;
+    height: 7vh;
     margin-top: 5vh;
     padding: 5px;
     border-radius: 3px;
@@ -200,26 +201,12 @@ body {
     background-color: white;
 }
 
-
-.modal {
-    height: 5vh;
+.todo-input {
+    margin-left: 50px;
     border: none;
-    margin: auto 12.5vw;
 }
 
 .create {
     position: relative;
-    right: 90%;
-}
-
-.new {
-    height: 5vh;
-    margin: auto 8vw;
-    padding: 5px;
-    border-radius: 3px;
-    box-shadow: rgba(0, 0, 0, 0.08) 0 0 0 1px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: white;
+    right: 85%;
 }
