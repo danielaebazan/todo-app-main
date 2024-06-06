@@ -32,7 +32,7 @@ const App = () => {
   return (
     <div className="app">
       <div className="header">
-        <ListHeader listName={'TO DO'} getData={getData} />
+        <ListHeader listName={'T O D O'} getData={getData} />
       </div>
       <Theme />
       {sortedTasks?.map((task) => (
