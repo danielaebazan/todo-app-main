@@ -3,7 +3,7 @@ import Modal from "./Modal";
 const ListHeader = ( {listName, getData} ) => {
   return (
     <div className="list-header">
-      <h1>{listName}</h1>
+      <h1 className="app-title">{listName}</h1>
       
       <div className="new-todo">
        <Modal mode={'create'} getData={getData}/>

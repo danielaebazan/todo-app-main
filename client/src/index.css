@@ -38,7 +38,6 @@ button {
 }
 
 /* */
-
 body {
     margin: 0;
     padding: 0;
@@ -58,82 +57,12 @@ body {
 }
 
 /* Theme */
-
 .light-theme {
     background-color: hsl(0, 0%, 98%)
 }
 
 .dark-theme {
     background-color: hsl(235, 21%, 11%)
-
-}
-
-/* Mobile version (max-width: 45rem) */
-@media (max-width: 45rem) {
-    .light-theme {
-        background-image: url('images/bg-mobile-light.jpg');
-    }
-
-    .dark-theme {
-        background-image: url('images/bg-mobile-dark.jpg');
-    }
-}
-
-/* Desktop version (min-width: 45rem) */
-@media (min-width: 45rem) {
-    .light-theme {
-        background-image: url('images/bg-desktop-light.jpg');
-    }
-
-    .dark-theme {
-        background-image: url('images/bg-desktop-dark.jpg');
-    }
-
-    .theme-toggle {
-        position: absolute;
-        right: 30vw !important;
-    }
-
-    .list-header {
-        position: absolute;
-        left: 30vw !important;
-    }
-
-    .task-title {
-        font-size: 1.1vw !important;
-    }
-
-    .list-item {
-        margin: auto 30vw !important;
-    }
-
-    .list-footer {
-        margin: auto 30vw !important;
-    }
-
-    .counter {
-        font-size: 1vw !important;
-    }
-
-    .clear-completed {
-        font-size: 1vw !important;
-        cursor: pointer !important;
-    }
-    
-    .new-todo {
-        width: 130% !important;
-        font-size: 1.1vw !important;
-    }
-
-    .filter {
-        font-size: 1vw !important;
-        position: relative !important;
-        top: -76.5vh;
-        margin: auto 40vw !important;
-        box-shadow: none !important;
-        background-color: transparent !important;
-    }
-
 }
 
 .theme-toggle {
@@ -150,8 +79,16 @@ body {
     height: auto;
 }
 
+/* Mobile version (max-width: 45rem) */
+@media (max-width: 45rem) {
+    .light-theme {
+        background-image: url('images/bg-mobile-light.jpg');
+    }
 
-
+    .dark-theme {
+        background-image: url('images/bg-mobile-dark.jpg');
+    }
+}
 
 /* List Header */
 .list-header {
@@ -162,6 +99,36 @@ body {
     padding: 0;
     z-index: 1;
     color: white !important;
+}
+
+.app-title {
+    width: 50vw;
+}
+
+.new-todo {
+    width: 271%;
+    height: 6vh;
+    margin-top: 5vh;
+    padding: 5px;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.08) 0 0 0 1px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+}
+
+.todo-input {
+    margin-left: 50px;
+    border: none;
+    font-family: 'Josefin Sans', sans-serif;
+    color: hsl(235, 19%, 35%);
+    font-size: 3vw;
+}
+
+.create {
+    position: relative;
+    right: 85%;
 }
 
 /* List Item */
@@ -186,7 +153,7 @@ body {
 }
 
 .task-title {
-    margin: 20px;
+    margin-left: 20px;
     font-size: 3vw;
 }
 
@@ -225,31 +192,7 @@ body {
     height: 10px;
 }
 
-.new-todo {
-    width: 271%;
-    height: 6vh;
-    margin-top: 5vh;
-    padding: 5px;
-    border-radius: 3px;
-    box-shadow: rgba(0, 0, 0, 0.08) 0 0 0 1px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: white;
-}
-
-.todo-input {
-    margin-left: 50px;
-    border: none;
-    font-family: 'Josefin Sans', sans-serif;
-    color: hsl(235, 19%, 35%);
-}
-
-.create {
-    position: relative;
-    right: 85%;
-}
-
+/* List Footer */
 .list-footer {
     height: 7vh;
     margin: auto 8vw;
@@ -280,6 +223,7 @@ body {
     color: hsl(236, 9%, 61%);
 }
 
+/* Filter */
 .filter {
         position: relative;
         bottom: 65vh;
@@ -299,4 +243,80 @@ body {
 .task-title.completed {
     text-decoration: line-through 1px;
     color: hsl(233, 11%, 84%)
+}
+
+/* Desktop version (min-width: 45rem) */
+@media (min-width: 45rem) {
+
+    /* Theme */
+    .light-theme {
+        background-image: url('images/bg-desktop-light.jpg');
+    }
+
+    .dark-theme {
+        background-image: url('images/bg-desktop-dark.jpg');
+    }
+
+    .theme-toggle {
+        position: absolute;
+        right: 30vw !important;
+    }
+
+    /* List Header */
+    .list-header {
+        position: absolute;
+        left: 30vw !important;
+    }
+
+    .app-title {
+        width: 30vw;
+    }
+
+    .new-todo {
+        width: 130% !important;
+        font-size: 1.1vw !important;
+    }
+
+    .todo-input {
+        font-size: 1.1vw !important;
+    }
+
+    /* List Item */
+    .list-item {
+        margin: auto 30vw !important;
+    }
+
+    .task-title {
+        font-size: 1.1vw !important;
+    }
+
+    /* List Footer */
+    .list-footer {
+        margin: auto 30vw !important;
+    }
+
+    .counter {
+        font-size: 1vw !important;
+    }
+
+    .clear-completed {
+        font-size: 1vw !important;
+        cursor: pointer !important;
+    }
+
+    /* Filter */
+    .filter {
+        font-size: 1vw !important;
+        position: relative !important;
+        top: -76.5vh;
+        margin: auto 40vw !important;
+        box-shadow: none !important;
+        background-color: transparent !important;
+    }
+
+}
+
+.dark-theme .list-item {
+    background-color: black !important;
+    color: white;
 }

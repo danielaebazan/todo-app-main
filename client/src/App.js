@@ -6,6 +6,7 @@ import ListItem from './components/ListItem'
 import ListFooter from './components/ListFooter';
 import Filter from './components/Filter';
 
+
 const App = () => {
   const [tasks, setTasks] = useState(null);
   const [filter, setFilter] = useState('all'); 
@@ -49,7 +50,7 @@ const App = () => {
         <ListFooter tasks={tasks} getData={getData} />
       )}
       {tasks && (
-        <Filter setFilter={setFilter} /> 
+        <Filter setFilter={setFilter} /> // Pass setFilter to Filter component
       )}
     </div>
   );
