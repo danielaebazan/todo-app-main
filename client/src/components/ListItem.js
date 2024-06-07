@@ -1,27 +1,25 @@
-import TickIcon from "./TickIcon"
-import deleteIcon from '../images/icon-cross.svg'
+import TickIcon from "./TickIcon";
+import deleteIcon from '../images/icon-cross.svg';
 
-const ListItem = ({task, getData}) => {
-
+const ListItem = ({ task, getData }) => {
   const deleteItem = async () => {
     try {
       const response = await fetch(`${process.env.REACT_APP_SERVERURL}/todos/${task.id}`, {
         method: 'DELETE'
-      })
+      });
       if (response.status === 200) {
-        getData()
+        getData();
       }
     } catch (err) {
-      console.error(err)
+      console.error(err);
     }
-  }
+  };
 
   return (
     <li className="list-item">
-     
       <div className="info-container">
-        <TickIcon/>
-        <p className="task-title">{task.title}</p>
+        <TickIcon task={task} getData={getData} />
+        <p className={`task-title ${task.completed ? 'completed' : ''}`}>{task.title}</p>
       </div>
 
       <div className="button-container">
@@ -30,7 +28,7 @@ const ListItem = ({task, getData}) => {
         </button>
       </div>
     </li>
-  )
+  );
 }
 
 export default ListItem;

@@ -1,16 +1,27 @@
-import React, { useState } from 'react';
+import React from 'react';
 import checkIcon from "../images/icon-check.svg";
 
-const TickIcon = () => {
-  const [isClicked, setIsClicked] = useState(false);
-
-  const handleClick = () => {
-    setIsClicked(!isClicked);
+const TickIcon = ({ task, getData }) => {
+  const handleClick = async () => {
+    try {
+      const response = await fetch(`${process.env.REACT_APP_SERVERURL}/todos/${task.id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ completed: !task.completed })
+      });
+      if (response.status === 200) {
+        getData();
+      }
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   return (
     <div 
-      className={`tick ${isClicked ? 'clicked' : ''}`} 
+      className={`tick ${task.completed ? 'clicked' : ''}`} 
       onClick={handleClick}
     >
       <img src={checkIcon} alt="Check" />
@@ -19,3 +30,4 @@ const TickIcon = () => {
 }
 
 export default TickIcon;
+

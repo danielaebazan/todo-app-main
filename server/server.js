@@ -25,13 +25,28 @@ app.post('/todos', async (req, res) => {
     const {title, date} = req.body
     const id = uuidv4()
     try {
-        const newToDo = await pool.query(`INSERT INTO todos(id, title, date) VALUES($1, $2, $3)`, 
-        [id, title, date])
+        const newToDo = await pool.query(`INSERT INTO todos(id, title, date, completed) VALUES($1, $2, $3, $4)`, 
+        [id, title, date, false])
         res.json(newToDo)
     } catch (err) {
         console.error(err)
     }
 })
+
+// update the completed status 
+app.put('/todos/:id', async (req, res) => {
+    const { id } = req.params;
+    const { completed } = req.body;
+    try {
+        const updateToDo = await pool.query(
+            'UPDATE todos SET completed = $1 WHERE id = $2;',
+            [completed, id]
+        );
+        res.json(updateToDo);
+    } catch (err) {
+        console.error(err);
+    }
+});
 
 // delete a todo
 app.delete('/todos/:id', async (req, res) => {

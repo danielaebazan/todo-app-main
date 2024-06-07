@@ -34,6 +34,7 @@ button {
     border: none;
     background-color: transparent;
     color: hsl(236, 9%, 61%) !important;
+    cursor: pointer;
 }
 
 /* */
@@ -116,6 +117,7 @@ body {
 
     .clear-completed {
         font-size: 1vw !important;
+        cursor: pointer !important;
     }
     
     .new-todo {
@@ -127,7 +129,7 @@ body {
         font-size: 1vw !important;
         position: relative !important;
         top: -76.5vh;
-        margin: auto 30vw !important;
+        margin: auto 40vw !important;
         box-shadow: none !important;
         background-color: transparent !important;
     }
@@ -294,3 +296,7 @@ body {
         font-family: 'Josefin Sans', sans-serif;
 }
 
+.task-title.completed {
+    text-decoration: line-through 1px;
+    color: hsl(233, 11%, 84%)
+}
