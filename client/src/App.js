@@ -50,11 +50,10 @@ const App = () => {
         <ListFooter tasks={tasks} getData={getData} />
       )}
       {tasks && (
-        <Filter setFilter={setFilter} /> // Pass setFilter to Filter component
+        <Filter setFilter={setFilter} /> 
       )}
     </div>
   );
 };
 
 export default App;
-
