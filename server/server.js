@@ -9,6 +9,10 @@ app.use(cors())
 app.use(express.json())
 
 
+app.get('/', (req, res) => {
+  res.send('Welcome to the ToDo API!');
+});
+
 //get all todos
 app.get('/todos', async (req, res) => {
 
