@@ -6,8 +6,11 @@ const app = express()
 const pool = require('./db')
 
 app.use(cors({
-  origin: 'https://todo-app-main-client.vercel.app' 
+  origin: 'https://todo-app-main-client.vercel.app', 
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type'],
 }));
+
 app.use(express.json());
 
 
