@@ -11,9 +11,15 @@ app.use(cors({
 app.use(express.json());
 
 
-app.get('/', (req, res) => {
-  res.send('Welcome to the ToDo API!');
-});
+app.get('/', async (req, res) => {
+
+    try {
+       const todos = await pool.query('SELECT * FROM todos')
+       res.json(todos.rows)
+    } catch (err) {
+        console.error(err)
+    }
+})
 
 //get all todos
 app.get('/todos', async (req, res) => {
