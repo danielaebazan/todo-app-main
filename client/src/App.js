@@ -11,15 +11,20 @@ const App = () => {
   const [tasks, setTasks] = useState(null);
   const [filter, setFilter] = useState('all'); 
 
-  const getData = async () => {
-    try {
-      const response = await fetch(`${process.env.REACT_APP_SERVERURL}/todos`);
-      const json = await response.json();
-      setTasks(json);
-    } catch (err) {
-      console.error(err);
+const getData = async () => {
+  try {
+    const response = await fetch(`${process.env.REACT_APP_SERVERURL}/todos`, {
+      mode: 'cors'
+    });
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
-  };
+    const json = await response.json();
+    setTasks(json);
+  } catch (err) {
+    console.error("Fetching data failed:", err);
+  }
+};
 
   useEffect(() => {
     getData();
